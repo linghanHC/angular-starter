@@ -35,6 +35,17 @@ export class Child2Component
     console.log('Child Constructor called');
   }
 
+  // Called once before ngOnInit() (if the component has bound inputs) and whenever one or more data-bound input properties change.
+  // the data-bound input is not in the same component, it should be some input from outside through input, check "channelName" in this example
+  // it is called on every keystroke of the input, so it is not a good idea to call any expensive activities, eg API calls
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
+    console.log('Child Onchanges');
+    console.log('  onChanges this.parentContent - ' + this.parentContent);
+    console.log('  onChanges this.childContent - ' + this.childContent);
+  }
+
+  // Called once after the first ngOnChanges
   ngOnInit(): void {
     console.log('Child OnInit - component is initialized');
     console.log('  init this.parentContent - ' + this.parentContent);
@@ -50,16 +61,6 @@ export class Child2Component
   ngOnDestroy() {
     // clearInterval(this.interval);    // demo of the cleanup to prevent memeory leaking
     console.log('Child OnDestroy - component is destroyed');
-  }
-
-  // Called once before ngOnInit() (if the component has bound inputs) and whenever one or more data-bound input properties change.
-  // the data-bound input is not in the same component, it should be some input from outside through input, check "channelName" in this example
-  // it is called on every keystroke of the input, so it is not a good idea to call any expensive activities, eg API calls
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-    console.log('Child Onchanges');
-    console.log('  onChanges this.parentContent - ' + this.parentContent);
-    console.log('  onChanges this.childContent - ' + this.childContent);
   }
 
   // Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run.
