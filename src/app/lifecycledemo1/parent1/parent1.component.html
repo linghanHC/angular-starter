@@ -1,0 +1,6 @@
+<p>ref: https://www.youtube.com/watch?v=ZWfQKxyCQ6w</p>
+<span>{{ title }} app is running!</span>
+
+<button (click)="flipShowLifeCycleState()">{{showLifeCycleDemo ? 'End Lifecycle' : 'Start Lifecycle'}}</button>
+<button (click)="incrementCount()">Increment Counter</button>
+<app-child1 *ngIf="showLifeCycleDemo" [count]="count"></app-child1>

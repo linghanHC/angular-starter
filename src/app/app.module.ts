@@ -10,6 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { AboutComponent } from './about/about.component';
 import { SimpleformComponent } from './simpleform/simpleform.component';
+import { Parent2Component } from './lifecycledemo2/parent2/parent2.component';
+import { Child2Component } from './lifecycledemo2/child2/child2.component';
+import { Child1Component } from './lifecycledemo1/child1/child1.component';
+import { Parent1Component } from './lifecycledemo1/parent1/parent1.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -21,6 +25,10 @@ export function createTranslateLoader(http: HttpClient) {
     LandingpageComponent,
     AboutComponent,
     SimpleformComponent,
+    Parent2Component,
+    Child2Component,
+    Child1Component,
+    Parent1Component,
   ],
   imports: [
     BrowserModule,

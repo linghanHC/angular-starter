@@ -1,0 +1,24 @@
+<p>ref: https://www.youtube.com/watch?v=kKtrHrciIVs</p>
+<ul>Lifecycle Hooks
+    <li>Components and Directives have Lifecycle hooks</li>
+    <li>Lifecycle hooks available to both Components and Directives
+        <ul>
+            <ol>ngOnInit, ngOnDestroy, ngOnChanges, ngDoCheck</ol>
+        </ul>
+    </li>
+
+    <li>Lifecycle hooks only available to Components
+        <ul>
+            <ol>ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit and ngAfterContentChecked </ol>
+        </ul>
+    </li>
+</ul>
+<p>======================================</p>
+<h1>Parent Component</h1>
+<button (click)="toggleChild()">Toggle Child</button>
+<input type="text" [(ngModel)]="firstName">
+<hr>
+<app-child2 *ngIf="isChild" [firstName]="firstName">
+    <!-- project some content from parent to child -->
+    <h2 #parentContent>This is content from parent</h2>
+</app-child2>
